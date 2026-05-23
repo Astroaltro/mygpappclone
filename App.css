@@ -1,0 +1,471 @@
+/* Base Reset & Variables */
+:root {
+  --primary-blue: #1877F2;
+  --bg-color: #F8F9FA;
+  --text-dark: #2B2B2B;
+  --text-light: #6B7280;
+  --card-bg: #FFFFFF;
+  --border-color: #E5E7EB;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #E5E5E5; /* Darker bg to show the mobile frame */
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile App Container Wrapper */
+.app-container {
+  width: 100%;
+  max-width: 414px; /* iPhone Max width */
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 80px; /* Space for bottom nav */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--card-bg);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-icon {
+  color: #4B5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.user-phone {
+  font-size: 12px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-arrow {
+  font-size: 14px;
+  margin-top: -4px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notification {
+  position: relative;
+  color: #1F2937;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: #EF4444;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Search Bar */
+.search-container {
+  padding: 0 20px 16px;
+  background-color: var(--card-bg);
+}
+
+.search-bar {
+  background-color: #F3F4F6;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 10px;
+}
+
+.search-icon {
+  color: #9CA3AF;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+/* Hero Banners Carousel */
+.banner-carousel {
+  display: flex;
+  padding: 16px 20px;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.banner-carousel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.banner {
+  height: 160px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.left-banner {
+  width: 40px;
+  background-color: #0B3B60;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.main-banner {
+  width: 300px;
+  background: linear-gradient(135deg, #4A8AD4, #7BA9E6);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.banner-content {
+  color: white;
+  z-index: 2;
+}
+
+.banner-badge {
+  background-color: #0F52BA;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.banner-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #FFDE59;
+}
+
+.banner-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gp-star {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.banner-btn {
+  background-color: #FFDE59;
+  color: #000;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Dashboard Card */
+.dashboard-card {
+  margin: 0 20px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.balance-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 16px;
+}
+
+.taka-icon {
+  background-color: #EBF5FF;
+  color: var(--primary-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.balance-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-label {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.recharge-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0 20px;
+}
+
+.usage-section {
+  display: flex;
+  padding: 16px 20px;
+  gap: 20px;
+}
+
+.usage-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.usage-text {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1F2937;
+  flex: 1;
+}
+
+.icon {
+  font-size: 16px;
+}
+.icon.blue { color: var(--primary-blue); }
+.icon.red { color: #EF4444; }
+
+.arrow {
+  color: var(--primary-blue);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Upsell Box */
+.upsell-box {
+  margin: 0 20px 20px;
+  background-color: #FFF9E6;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.upsell-badge {
+  background-color: #FDE047;
+  color: #854D0E;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.upsell-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upsell-text h4 {
+  color: #1F2937;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.upsell-text p {
+  color: #6B7280;
+  font-size: 12px;
+}
+
+/* One Tap Footer */
+.one-tap-footer {
+  background-color: #F0F9FF;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-blue);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Auto Pay Banner */
+.auto-pay-banner {
+  margin: 16px 20px;
+  background-color: #2E4B72;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.auto-pay-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.white-arrow {
+  color: white;
+  margin-left: auto;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-light);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.nav-item .icon {
+  font-size: 22px;
+  position: relative;
+}
+
+.nav-item.active {
+  color: var(--primary-blue);
+}
+
+.nav-dot {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: #EF4444;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+
+
+
+/* Placeholder Views for Inactive Tabs */
+.placeholder-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  height: 60vh;
+  color: var(--text-dark);
+}
+
+.placeholder-view h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--primary-blue);
+}
+
+.placeholder-view p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Optional: Smooth transition when clicking tabs */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure nav items look clickable */
+.nav-item {
+  cursor: pointer;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile */
+}
